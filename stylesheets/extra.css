@@ -1,0 +1,17 @@
+:root {
+  --md-primary-fg-color: #e07b39;
+  --md-primary-fg-color--light: #f0a060;
+  --md-primary-fg-color--dark: #c05a20;
+  --md-accent-fg-color: #e07b39;
+}
+
+/* Slightly tighten table padding */
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.5em 0.8em;
+}
+
+/* Code blocks */
+.md-typeset code {
+  font-size: 0.85em;
+}
