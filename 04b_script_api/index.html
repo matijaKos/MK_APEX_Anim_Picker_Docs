@@ -431,6 +431,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#injected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finding-the-right-parm-and-ctrl-names" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -936,6 +947,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#injected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finding-the-right-parm-and-ctrl-names" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1216,16 +1238,14 @@
 <p>Full reference for script mode buttons. For an overview see <a href="../04_script_mode/">04 — Script Mode</a>.</p>
 <h2 id="setting-up-a-script-button">Setting up a Script Button</h2>
 <ol>
-<li>Enter <strong>Edit Mode</strong></li>
-<li>Right-click an existing button → <strong>Script</strong><br />
-<em>or</em> create a new button and set its mode to <strong>Script</strong> in the edit panel</li>
-<li>Click <strong>Script Editor</strong> to open the code editor</li>
-<li>Write your Python code and save</li>
+<li>Right-click a button → <strong>Script</strong> (works in any mode)</li>
+<li>Right-click the button → <strong>Edit Script</strong></li>
+<li>Write your Python code and click <strong>Save</strong></li>
 </ol>
 <p><img alt="script mode" src="../media/videos/simple_script_button_creation.gif" /></p>
 <hr />
 <h2 id="injected-variables">Injected Variables</h2>
-<p>When a script button is clicked, the following variables are automatically available — no imports needed:</p>
+<p>Available automatically when the script runs — no imports needed:</p>
 <table>
 <thead>
 <tr>
@@ -1254,88 +1274,72 @@
 <td><code>Body</code></td>
 <td>Name of the tab the button lives on.</td>
 </tr>
+</tbody>
+</table>
+<h2 id="injected-functions">Injected Functions</h2>
+<p>Also available automatically — all operate on the current rig:</p>
+<table>
+<thead>
 <tr>
-<td><code>mk_get_parm</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mk_get_parm(parm_name)</code></td>
 <td>Read a graph parm value from the current rig.</td>
 </tr>
 <tr>
-<td><code>mk_set_parm</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_set_parm(parm_name, value, ctrl="")</code></td>
 <td>Set a graph parm value and update the viewport.</td>
 </tr>
 <tr>
-<td><code>mk_toggle_parm</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_toggle_parm(parm_name, ctrl="")</code></td>
 <td>Toggle a graph parm between two float values.</td>
 </tr>
 <tr>
-<td><code>mk_space_switch</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_space_switch(ctrl_name, set_keys=False)</code></td>
 <td>Trigger a match-and-switch (IK/FK snap) on a space-switch control.</td>
 </tr>
 <tr>
-<td><code>mk_show_ctrls</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_show_ctrls(ctrl_names)</code></td>
 <td>Show a list of controls by short name.</td>
 </tr>
 <tr>
-<td><code>mk_hide_ctrls</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_hide_ctrls(ctrl_names)</code></td>
 <td>Hide a list of controls by short name.</td>
 </tr>
 <tr>
-<td><code>mk_toggle_visibility</code></td>
-<td><code>func</code></td>
-<td>—</td>
-<td>Toggle visibility of a list of controls (any visible → hide all, all hidden → show all).</td>
+<td><code>mk_toggle_visibility(ctrl_names)</code></td>
+<td>Toggle visibility — any visible → hide all, all hidden → show all.</td>
 </tr>
 <tr>
-<td><code>mk_select_ctrls</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_select_ctrls(ctrl_names)</code></td>
 <td>Select controls in the viewport by short name. Accepts a string or list.</td>
 </tr>
 <tr>
-<td><code>mk_btn_disable</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_btn_disable(tags)</code></td>
 <td>Gray out picker buttons that have the given tag(s). They become non-clickable.</td>
 </tr>
 <tr>
-<td><code>mk_btn_enable</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_btn_enable(tags)</code></td>
 <td>Re-enable picker buttons that have the given tag(s).</td>
 </tr>
 <tr>
-<td><code>mk_btn_hide</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_btn_hide(tags)</code></td>
 <td>Hide picker buttons that have the given tag(s).</td>
 </tr>
 <tr>
-<td><code>mk_btn_show</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_btn_show(tags)</code></td>
 <td>Show picker buttons that have the given tag(s).</td>
 </tr>
 <tr>
-<td><code>mk_sync_ctrls</code></td>
-<td><code>func</code></td>
-<td>—</td>
+<td><code>mk_sync_ctrls()</code></td>
 <td>Force the control manager to process pending visibility changes. Call after show/hide if controls don't update immediately.</td>
 </tr>
 <tr>
 <td><code>mk_state</code></td>
-<td><code>object</code></td>
-<td>—</td>
 <td>Raw APEX animate state object. For advanced use when the helpers aren't enough.</td>
 </tr>
 </tbody>
@@ -1526,6 +1530,8 @@
 <li>The script runs in a restricted namespace — only the injected variables and standard Python/Houdini imports are available. Use <code>import</code> normally for anything else (<code>hou</code>, <code>apex</code>, <code>scu</code>, etc.).</li>
 <li><code>rig.graph_parms</code> is a live APEX dict — <code>.set()</code> changes are immediate.</li>
 </ul>
+<hr />
+<p>← <a href="../04_script_mode/">Script Mode</a> · <a href="../05_edit_mode/">Edit Mode</a> →</p>
 
 
 

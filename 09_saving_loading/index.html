@@ -816,11 +816,7 @@
 
 <hr />
 <h2 id="path-conflicts">Path Conflicts</h2>
-<p>If two or more tabs point to the same file:</p>
-<ul>
-<li><strong>Manual save</strong> — blocked with a warning asking you to pick a different name</li>
-<li><strong>Auto-save</strong> — the conflicting tabs are skipped and a warning is shown; tabs with unique paths still save normally</li>
-</ul>
+<p>When <strong>Auto-save on Hip Save</strong> is enabled, if two or more tabs point to the same file the conflicting tabs are skipped and a warning is shown. Tabs with unique paths still save normally.</p>
 <hr />
 <h2 id="loading">Loading</h2>
 <p><strong>File → Load Tab(s)</strong> — opens a file picker. Multiple files can be selected at once; each becomes its own tab.</p>
@@ -832,16 +828,12 @@
 <p><code>$HIP</code> and other Houdini variables are supported in paths.</p>
 <hr />
 <h2 id="poses-across-sessions">Poses Across Sessions</h2>
-<p>Pose data is fully self-contained in the JSON. When you reopen a picker file:</p>
-<ol>
-<li>The picker reads the stored pose geometry from the JSON</li>
-<li>Re-injects it into a private APEX catalog (<code>$HOUDINI_USER_PREF_DIR/mk_anim_picker/poses.bgeo</code>)</li>
-<li>Pose buttons work immediately — no recapture needed</li>
-</ol>
+<p>Pose data is fully self-contained in the JSON. Pose buttons work as soon as you reopen the file — no recapture needed.</p>
 <hr />
 <h2 id="multiple-characters">Multiple Characters</h2>
 <p>Each character or shot can have its own <code>.json</code> file. Load multiple files to get multiple tabs.</p>
-<p>Tabs within a single file are useful for organizing one character (e.g. Body / Face / Props tabs).</p>
+<hr />
+<p>← <a href="../08_canvas_background/">Canvas &amp; Background</a> · <a href="../10_zones/">Zones</a> →</p>
 
 
 

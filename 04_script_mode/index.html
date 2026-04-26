@@ -415,6 +415,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#injected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -759,6 +770,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#injected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -842,8 +864,7 @@ Useful for IK/FK switching, toggling rig options, selecting control sets, or any
 <h2 id="_1"><img alt="script mode" src="../media/videos/script_button.gif" /></h2>
 <h2 id="setting-up-a-script-button">Setting Up a Script Button</h2>
 <ol>
-<li>In <strong>Edit Mode</strong>, right-click a button → <strong>Script</strong><br />
-<em>or</em> set the button's mode to <strong>Script</strong> in the edit panel</li>
+<li>Right-click a button → <strong>Script</strong> (works in any mode)</li>
 <li>Right-click the button → <strong>Edit Script</strong></li>
 <li>Write your code in the editor and click <strong>Save</strong></li>
 </ol>
@@ -851,7 +872,7 @@ Useful for IK/FK switching, toggling rig options, selecting control sets, or any
 <p><img alt="script mode" src="../media/videos/simple_script_button_creation.gif" /></p>
 <hr />
 <h2 id="injected-variables">Injected Variables</h2>
-<p>These variables are available automatically when the script runs — no import needed:</p>
+<p>Available automatically — no import needed:</p>
 <table>
 <thead>
 <tr>
@@ -876,44 +897,48 @@ Useful for IK/FK switching, toggling rig options, selecting control sets, or any
 <td><code>str</code></td>
 <td>Name of the tab the button lives on.</td>
 </tr>
+</tbody>
+</table>
+<h2 id="injected-functions">Injected Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code>mk_get_parm</code> / <code>mk_set_parm</code> / <code>mk_toggle_parm</code></td>
-<td><code>func</code></td>
 <td>Read, set, or toggle a rig graph parm.</td>
 </tr>
 <tr>
 <td><code>mk_space_switch</code></td>
-<td><code>func</code></td>
 <td>Match-and-switch (IK/FK snap).</td>
 </tr>
 <tr>
 <td><code>mk_show_ctrls</code> / <code>mk_hide_ctrls</code> / <code>mk_toggle_visibility</code></td>
-<td><code>func</code></td>
 <td>Show, hide, or toggle control visibility.</td>
 </tr>
 <tr>
 <td><code>mk_select_ctrls</code></td>
-<td><code>func</code></td>
 <td>Select controls in the viewport.</td>
 </tr>
 <tr>
 <td><code>mk_btn_disable</code> / <code>mk_btn_enable</code> / <code>mk_btn_hide</code> / <code>mk_btn_show</code></td>
-<td><code>func</code></td>
 <td>Control picker button state by tag.</td>
 </tr>
 <tr>
 <td><code>mk_sync_ctrls</code></td>
-<td><code>func</code></td>
 <td>Force control manager to flush pending visibility changes.</td>
 </tr>
 <tr>
 <td><code>mk_state</code></td>
-<td><code>object</code></td>
 <td>Raw APEX animate state — for advanced use.</td>
 </tr>
 </tbody>
 </table>
-<p>All helpers operate on the current rig automatically. See <a href="../04b_script_api/">Script API Reference</a> for full signatures and examples.</p>
+<p>All functions operate on the current rig automatically. See <a href="../04b_script_api/">Script API Reference</a> for full signatures and examples.</p>
 <hr />
 <h2 id="examples">Examples</h2>
 <h3 id="ikfk-toggle">IK/FK Toggle</h3>
@@ -952,6 +977,8 @@ Useful for IK/FK switching, toggling rig options, selecting control sets, or any
 <li>Use <code>import</code> normally for anything else (<code>hou</code>, <code>apex</code>, etc.).</li>
 </ul>
 <p>For the full helper and API reference see <a href="../04b_script_api/">Script API Reference</a>.</p>
+<hr />
+<p>← <a href="../03_pose_mode/">Pose Mode</a> · <a href="../04b_script_api/">Script API Reference</a> →</p>
 
 
 
