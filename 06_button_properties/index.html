@@ -550,6 +550,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reserved-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserved tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -834,6 +873,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reserved-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserved tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -853,18 +931,16 @@
 
 <h1 id="button-properties">Button Properties</h1>
 <p>Select one or more buttons in <strong>Edit Mode</strong> to edit their properties in the right-side edit panel.</p>
-<!-- IMAGE: edit panel with a button selected, all sections visible -->
-
 <hr />
 <h2 id="label">Label</h2>
+<p><img alt="Label" src="../media/images/label.png" /></p>
 <p>Type a new name in the <strong>Rename</strong> field and press Enter.</p>
 <p>Use <strong>Search &amp; Replace</strong> to rename multiple buttons at once — supports match case and whole word options.</p>
 <hr />
 <h2 id="color">Color</h2>
 <p>Click the <strong>color swatch</strong> to open the preset palette.<br />
 Click the <strong>pipette icon</strong> to open the HSV color picker for a custom color.</p>
-<!-- IMAGE: color palette popup -->
-
+<p><img alt="Color" src="../media/images/color.png" /></p>
 <hr />
 <h2 id="shape">Shape</h2>
 <table>
@@ -890,10 +966,10 @@ Click the <strong>pipette icon</strong> to open the HSV color picker for a custo
 </tbody>
 </table>
 <p>Use <strong>Flip H / Flip V</strong> to mirror the shape horizontally or vertically.</p>
-<!-- IMAGE: same button in rect, circle, and svg shape -->
-
+<p><img alt="Shape" src="../media/images/shape.png" /></p>
 <hr />
 <h2 id="mode">Mode</h2>
+<p><img alt="Mode" src="../media/images/mode.png" /></p>
 <p>Sets what the button does when clicked in select mode:</p>
 <table>
 <thead>
@@ -919,20 +995,78 @@ Click the <strong>pipette icon</strong> to open the HSV color picker for a custo
 </table>
 <hr />
 <h2 id="size">Size</h2>
+<p><img alt="Size" src="../media/images/size.png" /></p>
 <p>Use the <strong>W</strong> and <strong>H</strong> spinboxes to set an exact pixel size.<br />
 Enable <strong>Lock W=H</strong> to constrain proportions.</p>
 <hr />
 <h2 id="controls-select-mode">Controls (Select Mode)</h2>
+<p><img alt="Edit controls" src="../media/images/edit_controls.png" /></p>
 <p>Shows the APEX control paths assigned to the button.</p>
 <p>Right-click the button → <strong>Edit Controls</strong> to open the Selection Manager dialog. See <a href="../02_select_mode/">Select Mode</a> for all assignment options.</p>
 <hr />
 <h2 id="script-script-mode">Script (Script Mode)</h2>
+<p><img alt="Script editor" src="../media/images/script_editor.png" /></p>
 <p>Right-click the button → <strong>Edit Script</strong> to open the code editor.</p>
 <p>See <a href="../04_script_mode/">Script Mode</a> for full details.</p>
 <hr />
 <h2 id="pose-pose-mode">Pose (Pose Mode)</h2>
+<p><img alt="Capture pose" src="../media/images/capture_pose.png" /></p>
 <p>Right-click the button → <strong>Capture Pose</strong> to store the current rig pose.</p>
 <p>See <a href="../03_pose_mode/">Pose Mode</a> for full details.</p>
+<hr />
+<h2 id="tags">Tags</h2>
+<p><img alt="Tags" src="../media/images/tags.png" /></p>
+<p>Tags are arbitrary labels you assign to buttons in Edit Mode. They are used to show, hide, enable, or disable groups of buttons at runtime via <a href="../04_script_mode/">Script buttons</a>.</p>
+<p><strong>Adding a tag</strong> — type a name in the <strong>Tag name…</strong> field in the edit panel and press Enter or click <strong>Add</strong>. The tag appears as a chip. Click <strong>×</strong> on a chip to remove it.</p>
+<p>Tags are shared across a selection — adding a tag when multiple buttons are selected applies it to all of them.</p>
+<h3 id="reserved-tags">Reserved tags</h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_hidden</code></td>
+<td>Button is hidden (invisible) in select mode</td>
+</tr>
+<tr>
+<td><code>_disabled</code></td>
+<td>Button is grayed out and non-interactive in select mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="script-api">Script API</h3>
+<p>Use these functions inside a Script button to control tagged buttons at runtime:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mk_btn_show(["tag"])</code></td>
+<td>Show buttons with that tag</td>
+</tr>
+<tr>
+<td><code>mk_btn_hide(["tag"])</code></td>
+<td>Hide buttons with that tag</td>
+</tr>
+<tr>
+<td><code>mk_btn_enable(["tag"])</code></td>
+<td>Enable buttons with that tag</td>
+</tr>
+<tr>
+<td><code>mk_btn_disable(["tag"])</code></td>
+<td>Disable (gray out) buttons with that tag</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../04_script_mode/">Script Mode</a> and <a href="../04b_script_api/">Script API Reference</a> for full details.</p>
 <hr />
 <p>← <a href="../05_edit_mode/">Edit Mode</a> · <a href="../07_import_layout/">Import Layout</a> →</p>
 
