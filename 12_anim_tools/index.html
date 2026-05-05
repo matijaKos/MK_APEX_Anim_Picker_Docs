@@ -690,6 +690,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mirror-x-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror X ⚠️ Experimental
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror X ⚠️ Experimental">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-it_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mirror-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -727,6 +766,17 @@
     <span class="md-ellipsis">
       
         Del Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revert
       
     </span>
   </a>
@@ -874,6 +924,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mirror-x-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mirror X ⚠️ Experimental
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror X ⚠️ Experimental">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-it_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mirror-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -911,6 +1000,17 @@
     <span class="md-ellipsis">
       
         Del Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revert
       
     </span>
   </a>
@@ -1033,6 +1133,22 @@
 </tbody>
 </table>
 <hr />
+<h2 id="mirror-x-experimental">Mirror X ⚠️ Experimental</h2>
+<p><strong>Mirrors the current pose</strong> of selected controls, including the COG, when the standard Mirror Pose breaks due to heavy COG rotation.</p>
+<h3 id="why-it-exists">Why it exists</h3>
+<p>Houdini's internal mirror code can produce incorrect results when the COG control is significantly rotated — the mirrored pose ends up wrong or flipped in unexpected ways. Mirror X works around this by temporarily zeroing the COG rotation before mirroring, computing the mirrored COG translation manually relative to the Mirror Root, then restoring the correct mirrored rotation afterward.</p>
+<h3 id="when-to-use-it_2">When to use it</h3>
+<p>Use Mirror X instead of Mirror Pose when:</p>
+<ul>
+<li>Your character has a heavily rotated COG (leaning, crouching, twisted spine)</li>
+<li>Mirror Pose gives a broken result specifically on the COG control</li>
+<li>Mirror COG is not the right fit because you still want a world-space mirror</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Experimental</p>
+<p>This is a workaround for a known Houdini APEX limitation. Results should be correct in most cases but may not be perfect on all rigs. If you get unexpected results, try adjusting your Mirror Root or COG control assignments in <strong>Edit → Mirror Settings</strong>.</p>
+</div>
+<hr />
 <h2 id="mirror-keys">Mirror Keys</h2>
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/kiO803_qALg?rel=0&modestbranding=1&vq=hd1080" frameborder="0" allowfullscreen></iframe>
 
@@ -1055,6 +1171,9 @@
 <li>If a <strong>frame range is selected</strong> in the Houdini playbar, all keys within that range are deleted.</li>
 <li>Otherwise only the key at the <strong>current frame</strong> is deleted.</li>
 </ul>
+<hr />
+<h2 id="revert">Revert</h2>
+<p>Resets selected controls to their default values.</p>
 <hr />
 <h2 id="mirror-setup">Mirror Setup</h2>
 <p>Before using any mirror operation you need to tell the picker which controls define the mirror planes. Do this once per rig via <strong>Edit → Mirror Settings</strong>.</p>
